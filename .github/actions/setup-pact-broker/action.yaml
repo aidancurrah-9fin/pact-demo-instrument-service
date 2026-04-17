@@ -1,0 +1,10 @@
+name: Setup Pact broker
+description: Spins up the dokcer container with the pact broker.
+
+runs:
+  using: "composite"
+  steps:
+    - name: Spin up docker container
+      id: docker-compose-up
+      shell: bash
+      run: docker compose up -d
