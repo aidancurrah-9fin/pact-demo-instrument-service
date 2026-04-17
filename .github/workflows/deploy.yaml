@@ -1,4 +1,4 @@
-name: Consumer deploy pipline
+name: Deploy
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ env:
   service-name: "instrument-service"
 
 jobs:
-  consumer-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
