@@ -14,6 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+
       - name: Install PactCLI
         uses: ./.github/actions/install-broker
         with:
