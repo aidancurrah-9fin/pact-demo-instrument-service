@@ -15,4 +15,4 @@ runs:
       run: | 
         curl -LO https://github.com/pact-foundation/pact-standalone/releases/download/v${{ inputs.pact-version }}/pact-${{ inputs.pact-version }}-linux-x86_64.tar.gz
         tar xzf pact-${{ inputs.pact-version }}-linux-x86_64.tar.gz
-        echo "$HOME/work/pact-demo/pact-demo/pact/bin/" >> $GITHUB_PATH
+        echo "$HOME/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}/pact/bin/" >> $GITHUB_PATH
