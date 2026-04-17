@@ -5,9 +5,7 @@ on:
 
 env:
   pact-version: "2.6.0"
-  deploy-environment: "production"
   pact-broker-url: "https://9fin.pactflow.io"
-  service-name: "instrument-service"
 
 jobs:
   run-tests:
@@ -34,8 +32,6 @@ jobs:
 
       - name: Generate Consumer pacts
         uses: ./.github/actions/run-service-tests
-        with:
-          service-name: ${{ env.service-name }}
 
       - name: Publish pacts
         run: pact-broker publish ./pacts --consumer-app-version $GIT_HEAD_REF --broker-base-url ${{ env.pact-broker-url }} --broker-token ${{ secrets.PACT_BROKER_TOKEN }}
