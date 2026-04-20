@@ -34,4 +34,8 @@ jobs:
         uses: ./.github/actions/run-service-tests
 
       - name: Publish pacts
-        run: pact-broker publish ./pacts --consumer-app-version $GIT_HEAD_REF --broker-base-url ${{ env.pact-broker-url }} --broker-token ${{ secrets.PACT_BROKER_TOKEN }}
+        run: |
+          pact-broker publish ./pacts \
+            --consumer-app-version $GIT_HEAD_REF \
+            --broker-base-url ${{ env.pact-broker-url }} \
+            --broker-token ${{ secrets.PACT_BROKER_TOKEN }}
