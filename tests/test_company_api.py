@@ -33,7 +33,7 @@ def mock_company_service() -> Generator[str, None, None]:
         .given("Company ID 2 does not exist")
         .with_request("GET", "/2")
         .will_respond_with(404)
-        .with_body({"detail": "Not found"}, content_type="application/json")
+        .with_body({"detail": "Company not found"}, content_type="application/json")
     )
 
     with pact.serve() as srv:
